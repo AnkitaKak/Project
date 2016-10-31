@@ -1,0 +1,51 @@
+.carousel-inner> .item > img,
+	.carousel-inner> .item > a> img {
+	      width: 1000px;
+		  height: 500px;
+		  margin: auto;
+	}
+	
+	.embed-responsive-item {
+	       height: 300px;
+		   width: 300px
+    }
+
+    .dropdown {
+           position: relative;
+		   display: inline-block;
+    }
+
+	.dropdown-content {
+		   display: none;
+		   position: absolute;
+		   background-color: black;
+		   min-width: 160px;
+		   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		   font-color: white;
+	}
+
+	.dropdown-content a {
+		   color: white;
+		   padding: 12px 16px;
+		   text-decoration: none;
+		   display: block;
+	}
+
+	.dropdown:hover .dropdown-content {
+		   display: block;
+	}
+     
+	figcaption {
+	       display: block;
+	       text-align: center;
+	       color: black;
+	} 
+	
+	.btn {
+		   border:0px solid transparent;
+	}
+
+	p {
+	       font-family: "Comic Sans MS", cursive, sans-serif;
+		   font-size: 20px;
+    }
