@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>HOME</title>
+  <title>Accessorize | Home</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style1.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
+  <style>
+    .carousel-inner> .item > img,
+	.carousel-inner> .item > a> img {
+	      width: 1000px;
+		  height: 500px;
+		  margin: auto;
+	}
+	
+	.embed-responsive-item {
+	       height: 300px;
+		   width: 300px
+    }
+
+    .dropdown {
+           position: relative;
+		   display: inline-block;
+    }
+
+	.dropdown-content {
+		   display: none;
+		   position: absolute;
+		   background-color: black;
+		   min-width: 160px;
+		   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		   font-color: white;
+	}
+
+	.dropdown-content a {
+		   color: white;
+		   padding: 12px 16px;
+		   text-decoration: none;
+		   display: block;
+	}
+
+	.dropdown:hover .dropdown-content {
+		   display: block;
+	}
+     
+	figcaption {
+	       display: block;
+	       text-align: center;
+	       color: black;
+	} 
+	
+	.btn {
+		   border:0px solid transparent;
+	}
+
+	p {
+	       font-family: "Comic Sans MS", cursive, sans-serif;
+		   font-size: 20px;
+    }
+  </style>
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top" style="color: white;">
@@ -20,7 +72,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> 
         </button>
-	  <a class="navbar-brand" href="#"><img src="1.jpg" width="180px" height=300%></a>	
+	  <a class="navbar-brand" href="#"><img src="/images/1.jpg" width="180px" height=300%></a>	
 	  </div>
 	  <div class="collapse navbar-collapse" id="myNavbar">
 	  <br>
@@ -53,8 +105,8 @@
           <li><a href="#">Offers</a></li>	  
         </ul>
 	    <ul class="nav navbar-nav navbar-right">
-          <li><a href="Register.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
       </div>
    </div>	
@@ -73,19 +125,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" >
       <div class="item active">
-        <img src="6.jpeg" alt="Welcome">
+        <img src="/images/6.jpeg" alt="Welcome">
       </div>
 
       <div class="item">
-        <img src="8_1.jpg" alt="Collections">
+        <img src="/images/8_1.jpg" alt="Collections">
       </div>
 
       <div class="item">
-        <img src="9_1.jpg" alt="For Men">
+        <img src="/images/9_1.jpg" alt="For Men">
       </div>
 	  
 	  <div class="item">
-        <img src="10_1.jpg" alt="For Men">
+        <img src="/images/10_1.jpg" alt="For Men">
       </div>
 	</div> 
 
@@ -119,33 +171,33 @@
     <table class="table"> 
 	  <tr> 
 	    <td><a href="#"><div class="col-md-3">
-		  <button class="btn btn-default">Shop Now
+		  <button class="btn btn-default">
 		  <figure>
-		    <img class="img-circle" src="16.jpg" style="width:200px;height:200px">
+		    <img class="img-circle" src="/images/16.jpg" style="width:200px;height:200px">
               <figcaption>Handbags & Purses</figcaption>
 		  </figure>
 		  </button>
 		</div></a></td>  
 		<td><a href="#"><div class="col-md-3">
-		  <button class="btn btn-default">Shop Now
+		  <button class="btn btn-default">
 		  <figure>
-		    <img class="img-circle" src="17.png" style="width:200px;height:200px">
+		    <img class="img-circle" src="/images/17.png" style="width:200px;height:200px">
 			  <figcaption>Jewellery</figcaption>
 		  </figure>
 		  </button>
 		</div></a></td>
 		<td><a href="#"><div class="col-md-3">
-		  <button class="btn btn-default">Shop Now
+		  <button class="btn btn-default">
 		  <figure>  
-			<img class="img-circle" src="18.jpg" style="width:200px;height:200px">
+			<img class="img-circle" src="/images/18.jpg" style="width:200px;height:200px">
 			  <figcaption>Hair Accessories</figcaption>
 		  </figure>
 		  </button>
 		</div></a></td>
 		<td><a href="#"><div class="col-md-3">
-		  <button class="btn btn-default">Shop Now
+		  <button class="btn btn-default">
 		  <figure>		  
-			<img class="img-circle" src="19.jpg" style="width:200px;height:200px">
+			<img class="img-circle" src="/images/19.jpg" style="width:200px;height:200px">
 			  <figcaption>Hats</figcaption>
 		  </figure>
 		  </button>

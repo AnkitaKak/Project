@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>HOME</title>
+  <title>Accessorize | Sign Up</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/034feea29c.js"></script>
+  <link rel="stylesheet" href="style2.css">
   <style>
- 
     .dropdown {
            position: relative;
 		   display: inline-block;
@@ -43,7 +43,6 @@
 	       font-family: "Times New Roman", Times, serif;
 		   font-size: 20px;
     }
-	
   </style>
 </head>
 <body>
