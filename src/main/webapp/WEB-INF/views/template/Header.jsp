@@ -92,7 +92,7 @@
         <ul class="nav navbar-nav nav-default">
           <li><a class="active" href="#"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
           <li class="dropdown">
-            <a class="dropbtn" data-toggle="dropdown" href="Product">Products
+            <a class="dropbtn" data-toggle="dropdown" href="#">Products
               <span class="caret"></span>
 		    </a>
             <div class="dropdown-content">

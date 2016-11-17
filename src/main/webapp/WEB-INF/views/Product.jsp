@@ -1,6 +1,23 @@
+<%@ page isELIgnored="false" %>
 <%@ include file="template/Header.jsp" %>
 
-<div class="section" style="padding-top: 100px">
+<script>
+     var prod=${productData};
+     angular.module("prodApp", [])
+     
+     .controller("productController", function ($scope) {
+    	 
+    	 $scope.prodData=prod;
+    	 
+    	 $scope.sort=function(keyname) {
+    		 $scope.sortKey=keyname; 
+    		 $scope.reverse=!$scope.reverse;
+    	 }
+     });
+     
+</script> 
+
+<div class="section" style="padding-top: 100px" ng-app="prodApp">
   
   <b>
   <p style="padding-left:50px;">Products in Store</p>
@@ -17,7 +34,7 @@
     </div>  
   </div>
   
-  <div class="row" ng-app="productApp" ng-controller="productController" style="padding-left:100px; padding-top:100px; padding-right:100px; padding-bottom:100px;">
+  <div class="row" ng-app="prodApp" ng-controller="productController" style="padding-left:100px; padding-top:100px; padding-right:100px; padding-bottom:100px;">
     <table class="table table-striped">
       <thead>
         <tr>
@@ -39,22 +56,6 @@
       <!-- </tbody> -->   
     </table>
   </div>  
-</div>
-
-<script>
-     var prod=${productData};
-     angular.module("productApp", [])
-     
-     .controller("productController", function ($scope) {
-    	 
-    	 $scope.prodData=prod;
-    	 
-    	 $scope.sort=function(keyname) {
-    		 $scope.sortKey=keyname; 
-    		 $scope.reverse=!$scope.reverse;
-    	 }
-     });
-     
-</script>  
+</div> 
 
 <%@ include file="template/Footer.jsp" %>
