@@ -1,4 +1,4 @@
-<!--  <beans xmlns="http://www.springframework.org/schema/beans"
+<beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:context="http://www.springframework.org/schema/context"
     xmlns:mvc="http://www.springframework.org/schema/mvc"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -13,7 +13,7 @@
           class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close">
           <property name="driverClassName" value="org.h2.Driver" />
-          <property name="url" value="jdbc:h2:tcp://localhost/~/products" />
+          <property name="url" value="jdbc:h2:tcp://localhost/~/accessorize" />
           <property name="username" value="admin" />
           <property name="password" value="12345" />
       </bean>
@@ -32,7 +32,7 @@
           
           <property name="packagesToScan">
             <array>
-              <value>model</value>
+              <value>com.niit.model</value>
             </array>
           </property>  
       </bean>
@@ -43,4 +43,3 @@
       </bean>
       
 </beans>  
--->

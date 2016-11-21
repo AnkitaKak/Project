@@ -1,21 +1,22 @@
-package controller;
+package com.niit.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
-
-import dao.ProductDAO;
-import dao.ProductDAOImpl;
-import model.Product;
+import com.niit.dao.ProductDAO;
+import com.niit.model.Product;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Controller
 public class HomeController {
 	
-	ProductDAO productDAO=new ProductDAOImpl();
+	@Autowired
+	//@Qualifier(value="productDAO")
+	ProductDAO productDAO;
 	
 	@RequestMapping("/")
 	public ModelAndView homePage() {
