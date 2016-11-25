@@ -43,6 +43,6 @@ public class HomeController {
 		ModelAndView model=new ModelAndView("Product");
 		model.addObject("productData", json);
 		return model;
-	}	
+	}
 
 }

@@ -27,7 +27,7 @@
     <div class="col-sm-1">
     </div>
     <div class="col-sm-4">
-      <input type="text" class="form-control" ng-model="search" style="padding-left:20px;" placeholder="Enter your criteria">
+      <input type="text" class="form-control" ng-model="search" style="padding-left:20px;" placeholder="Filter your criteria">
     </div>
     <div class="col-sm-8">
     
