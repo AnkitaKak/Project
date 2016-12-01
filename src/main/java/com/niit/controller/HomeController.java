@@ -1,6 +1,7 @@
 package com.niit.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,5 +45,22 @@ public class HomeController {
 		model.addObject("productData", json);
 		return model;
 	}
+	
+	@RequestMapping("/ProductDetails/{productId}")
+	public ModelAndView detailsPage(@PathVariable("productId") int productId) {
+		Product product=productDAO.getProduct(productId);
+		String json=new Gson().toJson(product);
+		ModelAndView model=new ModelAndView("ProductDetails");
+		model.addObject("productDetails", json);
+		return model;
+	}
+	
+	/*@RequestMapping("/ProductDetails/{productId}")
+	public ModelAndView detailsPage(@PathVariable("productId") int productId) {
+		Product product=productDAO.getProduct(productId);
+		ModelAndView model=new ModelAndView("ProductDetails");
+		model.addObject("product", product);
+		return model;
+	}*/
 
 }

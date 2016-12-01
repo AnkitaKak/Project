@@ -16,7 +16,7 @@ import com.niit.model.Product;
 public class ProductDAOImpl implements ProductDAO {
 	
 	@Autowired
-	SessionFactory sessionFactory;
+	private SessionFactory sessionFactory;
 	
 	public List<Product> getAllProducts() {
 		List<Product> products=sessionFactory.getCurrentSession().createQuery("from Product").getResultList();
@@ -24,12 +24,12 @@ public class ProductDAOImpl implements ProductDAO {
 	}
 	
 	public Product getProduct(int productId) {
-		Product products=(Product)sessionFactory.getCurrentSession().createQuery("from Product where productId="+productId).getSingleResult();
-		return products;
+		Product product=(Product)sessionFactory.getCurrentSession().createQuery("from Product where productId="+productId).getSingleResult();
+		return product;
 	}
 
-	public void updateProduct(Product products) {
-		sessionFactory.getCurrentSession().update(products);
+	public void updateProduct(Product product) {
+		sessionFactory.getCurrentSession().update(product);
 		
 	}
 

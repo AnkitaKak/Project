@@ -1,5 +1,6 @@
 <%@ page isELIgnored="false" %>
 <%@ include file="template/Header.jsp" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <script>
      var prod=${productData};
@@ -42,6 +43,7 @@
           <th ng-click="sort('brand')">Brand</th>
           <th ng-click="sort('price')">Price</th>
           <th ng-click="sort('category')">Category</th>
+          <th>More Info</th>
           <th></th>
         </tr>  
       </thead>
@@ -52,6 +54,9 @@
           <td>{{product.brand}}</td>
           <td>{{product.price}}</td>
           <td>{{product.category}}</td>
+          <td><a href="<c:url value='/ProductDetails/{{product.productId}}' />">
+            <span class="glyphicon glyphicon-info-sign"></span></a>
+          </td>
         </tr>  
       <!-- </tbody> -->   
     </table>

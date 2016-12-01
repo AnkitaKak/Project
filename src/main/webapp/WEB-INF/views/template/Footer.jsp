@@ -1,4 +1,4 @@
- <footer class="section" style="background: black">
+  <footer class="section" style="background: black">
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-6"><br>

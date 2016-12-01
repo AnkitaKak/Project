@@ -73,12 +73,13 @@
     <br>
     <button type="submit" class="btn btn-primary btn-lg">Register</button>
   </form>
+  </div>
   <br> 
   <p>
     <font color="#191970"> Already registered User??? </font>
     <a href="#"><font color="#DAA520"> Click here to Login </font></a>
   </p>
   </center>
-  </div>  
+  
 
 <%@ include file="template/Footer.jsp" %>
