@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,19 +91,8 @@
           </div>
         </form>
         <ul class="nav navbar-nav nav-default">
-          <li><a class="active" href="#"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
-          <li class="dropdown">
-            <a class="dropbtn" data-toggle="dropdown" href="Product">Products
-              <span class="caret"></span>
-		    </a>
-            <div class="dropdown-content">
-              <a href="Product">Jewellery</a>
-			  <a href="Product" >Handbags & Purses</a>
-			  <a href="Product" >Hair Accessories</a>
-			  <a href="Product" >Bracelets & Rings</a>
-			  <a href="Product" >Hats</a>
-		    </div> 
-          </li>
+          <li><a class="active" href="home"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
+          <li><a href="Product">Products</a></li>
           <li><a href="#">About Us</a></li> 
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">Offers</a></li>	  
