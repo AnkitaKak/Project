@@ -9,57 +9,57 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.niit.model.Person;
+import com.niit.model.Users;
 
 @Repository
 @Transactional
 @EnableTransactionManagement
-public class PersonDAOImpl implements PersonDAO {
+public class UserDAOImpl implements UserDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public void addPerson(Person person) {
+	public void addUser(Users user) {
 		Session session=sessionFactory.getCurrentSession();
-		session.persist(person);
+		session.persist(user);
 		
 	}
 
-	public void updatePerson(Person person) {
+	public void updateUser(Users user) {
 		Session session=sessionFactory.getCurrentSession();
-		session.update(person);
+		session.update(user);
 		
 	}
 
-	public List<Person> listPersons() {
+	public List<Users> listUsers() {
 		Session session=sessionFactory.getCurrentSession();
-		List<Person> persons=session.createQuery("from Person").getResultList();
-		if(persons.isEmpty())
+		List<Users> users=session.createQuery("from Users").getResultList();
+		/*if(users.isEmpty())
 		{
 			System.out.println("Empty");
 		}
 		else
 		{
-			for(Person p:persons)
+			for(Users u:users)
 			{
-				System.out.println(p.getName());
+				System.out.println(u.getName());
 			}
-		}
-		return persons;
+		}*/
+		return users;
 		
 	}
 
-	public Person getPersonById(int personId) {
+	public Users getUserById(int userId) {
 		Session session=sessionFactory.getCurrentSession();
-		Person person=(Person)session.createQuery("from Person where id="+personId).getSingleResult();
-		return person;
+		Users user=(Users)session.createQuery("from Users where id="+userId).getSingleResult();
+		return user;
 		
 	}
 
-	public void removePerson(int personId) {
+	public void removeUser(int userId) {
 		Session session=sessionFactory.getCurrentSession();
-		Person person=(Person)session.createQuery("from Person where id=+"+personId).getSingleResult();
-		session.delete(person);
+		Users user=(Users)session.createQuery("from Users where id=+"+userId).getSingleResult();
+		session.delete(user);
 	}
-	
+
 }

@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ page isELIgnored="false" %>
 
   <style>
 	h2 {
@@ -15,125 +16,136 @@
   </style>
   
   <br><br><br>
-  <center>
-  <c:url var="addAction" value="/person/add"> </c:url>
+  
+  <div class="container central">
+ 
+  <c:url var="addAction" value="/insertUser"> </c:url>
   
   <h2><font color="#708090"> Create an Account </font></h2>
-  <div class="container">
-  <form:form action="${addAction}" modelAttribute="person" method="POST" enctype="multipart/form-data">
-    <table>
-      <tr>
-          <td colspan="4">
-            <form:label path="name">
-              <spring:message text="Name:" />
-            </form:label>
-	      </td>
-	      <td colspan="6">
-	        <form:input path="name" placeholder="Enter Name" />
-	        <form:errors path="name" />  
-          </td>  
-	  </tr>
-	  <tr>
-	    <td colspan="4">
-	      <form:label path="gender"> 
-	        <spring:message text="Gender:" /> 
-	      </form:label>
-	    </td>  
-	    <td colspan="3">
-	      <form:input type="radio" path="gender" />
-	        <spring:message text="Male" />
-	    </td>
-	    <td colspan="3">      	  
-	      <form:input type="radio" path="gender" />
-	        <spring:message text="Female" />
-	    </td>
-	    <td>
-	      <form:errors path="gender" />
-	    </td>  
-	  </tr>
-	  <tr>  
-	    <td colspan="4">
-	      <form:label path="email">
-	        <spring:message text="Email:" />
-	      </form:label>
-	      </td> 
-	      <td colspan="6"> 
-            <form:input type="email" path="email" placeholder="Enter Email" />
-   	        <form:errors path="email" />
-   	      </td> 
-	  </tr>
-	  <tr>
-          <td colspan="4">
-            <form:label path="pwd">
-              <spring:message text="Password:" />
-            </form:label>
-	      </td>
-	      <td colspan="6">
-            <form:input type="password" path="pwd" placeholder="Enter password" />
-	        <form:errors path="pwd"/>
-	      </td>	
-      </tr>
-      <tr>  
-        <td colspan="4">
-            <form:label path="cpwd">
-              <spring:message text="Confirm Password:" />
-            </form:label>
-          </td>
-          <td colspan="6">
-	        <form:input type="password" path="cpwd" placeholder="Re-Enter Password" />
-            <form:errors path="cpwd" />
-          </td>
-	  </tr>  
-	  <tr>
-	    <td colspan="4">
-	      <form:label path="contact">
-	        <spring:message text="Contact:" />
-	      </form:label>
-	    </td>
-	    <td colspan="6">
-	      <form:input path="contact" placeholder="Enter Contact Number" />
-	      <form:errors path="contact" /> 
-	    </td>    
-	  </tr>
-	  <tr>  
-	    <td colspan="4">
-          <form:label path="dob">
-            <spring:message text="Date of Birth:" />
-          </form:label>
-          </td>
-          <td colspan="6"> 
-	        <form:input type="date" path="dob" placeholder="Enter Date of Birth" />
-            <form:errors path="dob" />
-          </td>  
- 	    </tr>
- 	    <tr>
-          <td colspan="4">
-            <form:label path="image">
-              <spring:message text="Upload a Profile Picture (optional):" /> 
-            </form:label>
-          </td>
-          <td colspan="6">
-	        <form:input path="image" type="file"  />
-            <form:errors path="image" />
-	      </td>
-	    </tr>  
-        
-        <br>
-        
-        <a href="<c:url value='/person/add' />" >
-          <form:button class="btn btn-primary btn-lg">
-            <spring:message text="Register" />
-          </form:button>
-        </a>  
-    </table>
-  </form:form>
+ 
+  <div class="row">
+  
+    <div class="col-md-8">
+    
+    <form:form action="${addAction}" commandName="user" method="POST"> 
+      <br /><br />
+      <table>
+        <tr>
+          <td><form:label path="name">Enter Name: </form:label></td>
+          <td><form:input class="form-control col-xs-6" type="text" id="name" path="name" name="name"></form:input></td>
+          <td><form:errors path="name" style="color:red;" /></td>
+        </tr>
+        <tr> 
+         <td></td>
+        </tr>
+        <tr>
+	      <td><form:label path="uname">Enter Username: </form:label></td>
+	      <td><form:input type="text" class="form-control col-xs-6" path="uname" id="uname" name="uname"/>
+	      <td><form:errors path="uname" style="color:red;" /></td>  
+	    </tr>
+	    <tr>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td><form:label path="email">Enter Email:</form:label></td>
+	      <td><form:input type="email" class="form-control col-xs-6" id="email" path="email" name="email" />
+	      <td><form:errors path="email" style="color:red;" /></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td><form:label path="pwd">Enter Password:</form:label></td>
+	      <td><form:input type="password" class="form-control col-xs-6" id="pwd" path="pwd" name="pwd" />
+	      <td><form:errors path="pwd" style="color:red;" /></td>
+	    </tr>
+	    <tr>
+	      <td></td>
+	    </tr>
+	    <tr>
+	      <td><form:label path="dob">Enter Date of Birth:</form:label></td>
+	      <td><form:input type="date" class="form-control col-xs-6" id="dob" path="dob" name="dob" />
+	      <td><form:errors path="dob" style="color:red;" /></td>
+	    </tr> 
+      </table>
+    </div>
+    
   </div>
-  <br> 
+  <div class="row">
+    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+  </div> 
+   
+  </form:form>
+    
+  <!--<form class="form-horizontal" role="form" action="${addAction}" ModelAttribute="person" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="name" class="col-md-4 control-label">Name: </label>
+	  <div class="col-md-6">
+	    <input type="text" class="form-control" name="name" placeholder="Enter Name" id="name">
+	    <span class="help-block">eg.: Harry Smith</span>
+      </div>
+	</div>
+	<div class="form-group">
+	  <label class="col-md-4 control-label" for="gender">Gender: </label>
+	  <div class="col-md-3">
+	    <input type="radio" name="gender" id="gender">Male
+      </div>
+	  <div class="col-md-3">	  
+	    <input type="radio" name="gender" id="gender">Female
+	  </div>
+	</div>
+	<div class="form-group">
+	  <label for="email" class="col-md-4 control-label">Email:</label>
+	  <div class="col-md-6">
+	    <input type="email" class="form-control" name="email" placeholder="Enter Email" id="email">
+	    <span class="help-block">example@example.com</span>
+	  </div>
+	</div>
+	<div class="form-group">
+      <label for="pwd" class="col-md-4 control-label">Password:</label>
+	  <div class="col-md-6">
+        <input type="password" class="form-control" name="pwd" placeholder="Enter password" id="pwd">
+	  </div>	
+    </div>
+	<div class="form-group">
+      <label for="cpwd" class="col-md-4 control-label">Confirm Password:</label>
+      <div class="col-md-6"> 
+	    <input type="password" class="form-control" name="cpwd" placeholder="Re-Enter Password" id="cpwd">
+		<span class="help-block">Passwords must match.</span>
+      </div>
+	</div>
+	<div class="form-group">
+	  <label for="contact" class="col-md-4 control-label">Contact:</label>
+	  <div class="col-md-6">
+	    <input type="text" class="form-control" name="contact" placeholder="Enter Contact Number" id="contact">
+	  </div>
+	</div>
+	<div class="form-group">
+      <label for="dob" class="col-md-4 control-label">Date of Birth:</label>
+      <div class="col-md-6"> 
+	    <input type="date" class="form-control" name="dob" placeholder="Enter Date of Birth" id="dob">
+      </div>
+	</div>
+	<div class="form-group">
+      <label for="image" class="col-md-4 control-label">Upload a Profile Picture (optional): </label>
+      <div class="col-md-6">
+	    <input type="file" class="form-control-file" name="image" id="image">
+      </div>
+	</div>
+    <br>
+    <a href="<c:url value='/person/add' />" >
+      <button type="submit" class="btn btn-primary btn-lg">Register</button>
+    </a>
+  </form>-->
+ 
+  </div>
+ 
+  <br> <br>
   <p>
     <font color="#191970"> Already registered User??? </font>
     <a href="#"><font color="#DAA520"> Click here to Login </font></a>
   </p>
-  </center>
+ 
+ <br /><br /><br /><br />
   
-
 <%@ include file="template/Footer.jsp" %>

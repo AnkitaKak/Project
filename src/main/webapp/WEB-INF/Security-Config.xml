@@ -8,10 +8,12 @@
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/home" access="permitAll" />
         <intercept-url pattern="/admin**" access="hasRole('ADMIN')" />
-        <form-login  authentication-failure-url="/Access_Denied" />
+        <form-login  login-page="/Login" username-parameter="uname" password-parameter="pwd" authentication-failure-url="/Access_Denied" />
+        <logout logout-success-url="/Login" />
+        <csrf disabled="true"></csrf>
     </http>
   
-    <authentication-manager >
+    <!-- <authentication-manager >
         <authentication-provider>
             <user-service>
                 <user name="ankita"  password="12345"  authorities="ROLE_USER" />
@@ -19,6 +21,16 @@
                 
             </user-service>
         </authentication-provider>
+    </authentication-manager> -->
+    
+    <authentication-manager>  
+      <authentication-provider>  
+        
+        <jdbc-user-service data-source-ref="dataSource"  
+            users-by-username-query="select uname, pwd, enabled from users where uname=?"  
+            authorities-by-username-query="select uname, role from users where uname=?" />  
+            
+      </authentication-provider>  
     </authentication-manager>
       
      

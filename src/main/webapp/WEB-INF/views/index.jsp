@@ -50,7 +50,7 @@
 	</div>	  
     <div class="col-md-6"> 
 	  <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/lfom1ILjd14" frameborder="0"></iframe>
+        <iframe class="embed-responsive-item" width="350" height="200" src="https://www.youtube.com/embed/N1oejB_l2jw" frameborder="0"></iframe>
       </div>
     </div>
     </div>

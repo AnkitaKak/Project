@@ -11,9 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.niit.dao.ProductDAO;
-import com.niit.model.Person;
+import com.niit.model.Users;
 import com.niit.model.Product;
-import com.niit.dao.PersonDAO;
+import com.niit.dao.UserDAO;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -36,7 +36,7 @@ public class HomeController {
 	@Autowired
 	//@Qualifier(value="productDAO")
 	ProductDAO productDAO;
-	PersonDAO personDAO;
+	UserDAO userDAO;
 	
 	@RequestMapping(value= {"/", "/home" }, method = RequestMethod.GET)
 	public ModelAndView homePage() {
@@ -45,9 +45,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value= "/Register")
-	public ModelAndView RegisterPage() {
-		ModelAndView model=new ModelAndView("Register");
-		return model;
+	public String registerPage(Model model) {
+		Users user=new Users();
+		model.addAttribute("user", user);
+		return "Register";
 	}
 	
 	@RequestMapping(value= "/Login")
@@ -73,70 +74,6 @@ public class HomeController {
 		model.addObject("productDetails", json);
 		return model;
 	}
-	
-	@RequestMapping(value= "/person/add", method = RequestMethod.POST)
-	public String addPerson(@Valid @ModelAttribute("person") Person person, Model model, BindingResult result, HttpServletRequest request) {
-		String filename;
-		byte[] bytes;
-		
-		if (!person.getImage().isEmpty()) {
-
-			try {
-				
-				bytes = person.getImage().getBytes();
-				personDAO.addPerson(person);
-				System.out.println("Data Inserted");
-				String path = request.getSession().getServletContext().getRealPath("/resources/images/" + person.getPersonId() + ".jpg");
-				System.out.println("Path = " + path);
-				System.out.println("File name = " + person.getImage().getOriginalFilename());
-				File f = new File(path);
-				BufferedOutputStream bs = new BufferedOutputStream(new FileOutputStream(f));
-				bs.write(bytes);
-				bs.close();
-				System.out.println("Image uploaded");
-			} 
-			catch (Exception ex) {
-				System.out.println(ex.getMessage());
-			}
-		}
-		
-		if(result.hasErrors())
-		{
-			return "Register";
-		}
-		
-		if(person.getPersonId()==0)
-		{
-			personDAO.addPerson(person);
-		}
-		/*else {
-			personDAO.updatePerson(person);
-		}*/
-		
-		
-		return "redirect:/";
-	}
-	
-	@RequestMapping(value= "/remove/{personId}")
-	public String removePerson(@PathVariable("personId") int personId)
-	{
-		personDAO.removePerson(personId);
-		return "redirect:/";
-	}
-	
-	@RequestMapping(value= "/edit/{personId}")
-	public String editPerson(@PathVariable("personId") int personId, Model model)
-	{
-		model.addAttribute("person", personDAO.getPersonById(personId));
-        model.addAttribute("listPersons", personDAO.listPersons());
-        return "";
-	}
-	
-	@RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public String adminPage(Model model) {
-        model.addAttribute("persons", personDAO.listPersons());
-        return "admin";
-    }
  
  
     @RequestMapping(value="/logout", method = RequestMethod.GET)
@@ -148,23 +85,5 @@ public class HomeController {
           return "index";
        }
  
-    @RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
-    public String accessDeniedPage(Model model) {
-        model.addAttribute("user", getPrincipal());
-        return "accessDenied";
-    }
     
-    private String getPrincipal(){
-        String userName = null;
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
- 
-        if (principal instanceof UserDetails) {
-            userName = ((UserDetails)principal).getUsername();
-        } 
-        else {
-            userName = principal.toString();
-        }
-        return userName;
-    }
-
 }

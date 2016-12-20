@@ -5,100 +5,83 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table(name="person")
-public class Person {
+@Table(name="users")
+public class Users {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int personId;
+	private int userId;
 	@Size(min=2,max=10,message="Name has to be between 2 and 10 characters")
 	@NotEmpty(message="Name Can't be empty")
 	private String name;
-	@NotEmpty(message="Gender Can't be empty")
-	private String gender;
+	@NotEmpty(message="Username Can't be empty")
+	private String uname;
 	@NotEmpty(message="Email Can't be empty")
 	private String email;
 	@NotEmpty(message="Password Can't be empty")
 	private String pwd;
-	@Value(value = "pwd")
-	@NotEmpty(message="Password don't match")
-	private String cpwd;
-	@Size(min=10, max=10, message="Enter a valid contact")
-	@NotEmpty(message="Contact Can't be empty")
-	private String contact;
 	@NotEmpty(message="Date of Birth Can't be empty")
 	private String dob;
 	
-	@Transient
-	private MultipartFile image;
-
-	public Person(){
+	public Users(){
 		super();
-	}
 	
-	public int getPersonId() {
-		return personId;
 	}
-	public void setPersonId(int personId) {
-		this.personId = personId;
+
+	public int getUserId() {
+		return userId;
 	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getGender() {
-		return gender;
+
+	public String getUname() {
+		return uname;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getPwd() {
 		return pwd;
 	}
+
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public String getCpwd() {
-		return cpwd;
-	}
 
-	public void setCpwd(String cpwd) {
-		this.cpwd = cpwd;
-	}
-	public String getContact() {
-		return contact;
-	}
-	public void setContact(String contact) {
-		this.contact = contact;
-	}
 	public String getDob() {
 		return dob;
 	}
+
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public MultipartFile getImage() {
-		return image;
-	}
-
-	public void setImage(MultipartFile image) {
-		this.image = image;
-	}
-
+	
+    
+	
 }
