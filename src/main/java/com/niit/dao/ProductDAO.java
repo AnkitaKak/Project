@@ -5,8 +5,10 @@ import java.util.List;
 import com.niit.model.Product;
 
 public interface ProductDAO {
-	public List<Product> getAllProducts();
+	  public void addProduct(Product product);
+	  public List<Product> getAllProducts();
 	  public Product getProduct(int productId);
 	  public void updateProduct(Product products);
-	  public void deleteProduct(Product products);
+	  public void deleteProduct(int productId);
+	  
 }

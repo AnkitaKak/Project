@@ -2,7 +2,6 @@ package com.niit.dao;
 
 import java.util.List;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -20,21 +19,21 @@ public class UserDAOImpl implements UserDAO {
 	private SessionFactory sessionFactory;
 
 	public void addUser(Users user) {
-		Session session=sessionFactory.getCurrentSession();
-		session.persist(user);
+		
+		sessionFactory.getCurrentSession().persist(user);
 		
 	}
 
 	public void updateUser(Users user) {
-		Session session=sessionFactory.getCurrentSession();
-		session.update(user);
+		
+		sessionFactory.getCurrentSession().update(user);
 		
 	}
 
 	public List<Users> listUsers() {
-		Session session=sessionFactory.getCurrentSession();
-		List<Users> users=session.createQuery("from Users").getResultList();
-		/*if(users.isEmpty())
+		
+		List<Users> users=sessionFactory.getCurrentSession().createQuery("from Users").getResultList();
+		if(users.isEmpty())
 		{
 			System.out.println("Empty");
 		}
@@ -44,22 +43,22 @@ public class UserDAOImpl implements UserDAO {
 			{
 				System.out.println(u.getName());
 			}
-		}*/
+		}
 		return users;
 		
 	}
 
 	public Users getUserById(int userId) {
-		Session session=sessionFactory.getCurrentSession();
-		Users user=(Users)session.createQuery("from Users where id="+userId).getSingleResult();
+
+		Users user=(Users)sessionFactory.getCurrentSession().createQuery("from Users where userId="+userId).getSingleResult();
 		return user;
 		
 	}
 
 	public void removeUser(int userId) {
-		Session session=sessionFactory.getCurrentSession();
-		Users user=(Users)session.createQuery("from Users where id=+"+userId).getSingleResult();
-		session.delete(user);
+		
+		Users user=(Users)sessionFactory.getCurrentSession().createQuery("from Users where userId=+"+userId).getSingleResult();
+		sessionFactory.getCurrentSession().delete(user);
 	}
 
 }

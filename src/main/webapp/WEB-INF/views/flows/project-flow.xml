@@ -1,0 +1,29 @@
+<flow xmlns="https://www.springframework.org/schema/webflow"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow
+    http://www.springframework.org/schema/webflow/spring-webflow.xsd" >
+    
+    
+    <view-state id="cartstate" view="Cart.jsp">
+          <transition on="moveToAddress" to="addressstate"></transition>
+    </view-state>      
+    
+    <view-state id="addressstate" view="Address.jsp">
+          <transition on="moveToOrderDetails" to="orderdetailsstate"></transition>
+          <transition on="moveToCart" to="cartstate"></transition>
+    </view-state>
+    
+    <view-state id="orderdetailsstate" view="OrderDetails.jsp">
+          <transition on="moveToPayment" to="paymentstate"></transition>
+          <transition on="moveToAddress" to="addressstate"></transition>
+    </view-state>
+    
+    <view-state id="paymentstate" view="Payment.jsp">
+          <transition on="moveToThankYou" to="thankyoustate"></transition>
+          <transition on="moveToOrderDetails" to="orderdetailsstate"></transition>
+    </view-state>
+    
+    <view-state id="thankyoustate" view="ThankYou.jsp"></view-state>
+    
+    
+</flow>    

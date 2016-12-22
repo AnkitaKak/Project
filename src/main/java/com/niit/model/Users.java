@@ -28,7 +28,10 @@ public class Users {
 	private String pwd;
 	@NotEmpty(message="Date of Birth Can't be empty")
 	private String dob;
+	private String role;
+	private boolean enabled;
 	
+
 	public Users(){
 		super();
 	
@@ -80,6 +83,22 @@ public class Users {
 
 	public void setDob(String dob) {
 		this.dob = dob;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
     

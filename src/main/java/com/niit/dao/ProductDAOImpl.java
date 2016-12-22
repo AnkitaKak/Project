@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.model.Product;
+import com.niit.model.Users;
 
 @Repository
 @Transactional
@@ -17,6 +18,12 @@ public class ProductDAOImpl implements ProductDAO {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
+	
+    public void addProduct(Product product) {
+		
+		sessionFactory.getCurrentSession().persist(product);
+		
+	}
 	
 	public List<Product> getAllProducts() {
 		List<Product> products=sessionFactory.getCurrentSession().createQuery("from Product").getResultList();
@@ -33,7 +40,8 @@ public class ProductDAOImpl implements ProductDAO {
 		
 	}
 
-	public void deleteProduct(Product products) {
-		sessionFactory.getCurrentSession().remove(products);
+	public void deleteProduct(int productId) {
+		Product product=(Product)sessionFactory.getCurrentSession().createQuery("from Product where productId="+productId).getSingleResult();
+		sessionFactory.getCurrentSession().delete(product);
 	}
 }

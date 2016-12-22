@@ -1,12 +1,18 @@
 package com.niit.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Product {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int productId;
 	private String brand;
 	private String productName;
@@ -14,8 +20,12 @@ public class Product {
 	private String description;
 	private double price;
 	 
+	@Transient
+	private MultipartFile image;
 	
+
 	public Product() {
+		super();
 	
 	}
 
@@ -67,4 +77,11 @@ public class Product {
 		this.price = price;
 	}
 	
+	public MultipartFile getImage() {
+		return image;
+	}
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
 }

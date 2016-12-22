@@ -14,19 +14,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox" >
       <div class="item active">
-        <a href="#"><img src="resources/img/6.jpeg" class="img-responsive" alt="Welcome" style="width:100%"></a>
+        <a href="#"><img src="resources/img/welcome.jpeg" class="img-responsive" alt="Welcome" style="width:100%"></a>
       </div>
 
       <div class="item">
-        <a href="#"><img src="resources/img/8_1.jpg" class="img-responsive" alt="Collections" style="width:100%"></a>
+        <a href="#"><img src="resources/img/img2.jpg" class="img-responsive" alt="Collections" style="width:100%"></a>
       </div>
 
       <div class="item">
-        <a href="#"><img src="resources/img/9_1.jpg" class="img-responsive" alt="For Men" style="width:100%"></a>
+        <a href="#"><img src="resources/img/img3.jpg" class="img-responsive" alt="For Men" style="width:100%"></a>
       </div>
 	  
 	  <div class="item">
-        <a href="#"><img src="resources/img/10_1.jpg" class="img-responsive" alt="For Men" style="width:100%"></a>
+        <a href="#"><img src="resources/img/img4.jpg" class="img-responsive" alt="For Men" style="width:100%"></a>
       </div>
 	</div> 
 
@@ -62,7 +62,7 @@
 	    <td><a href="Product"><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>
-		    <img class="img-circle" src="resources/img/16.jpg" style="width:200px;height:200px">
+		    <img class="img-circle" src="resources/img/img5.jpg" style="width:200px;height:200px">
               <figcaption>Handbags & Purses</figcaption>
 		  </figure>
 		  </button>
@@ -70,7 +70,7 @@
 		<td><a href="Product"><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>
-		    <img class="img-circle" src="resources/img/17.png" style="width:200px;height:200px">
+		    <img class="img-circle" src="resources/img/img6.png" style="width:200px;height:200px">
 			  <figcaption>Jewellery</figcaption>
 		  </figure>
 		  </button>
@@ -78,7 +78,7 @@
 		<td><a href="Product"><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>  
-			<img class="img-circle" src="resources/img/18.jpg" style="width:200px;height:200px">
+			<img class="img-circle" src="resources/img/img7.jpg" style="width:200px;height:200px">
 			  <figcaption>Hair Accessories</figcaption>
 		  </figure>
 		  </button>
@@ -86,7 +86,7 @@
 		<td><a href="Product"><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>		  
-			<img class="img-circle" src="resources/img/19.jpg" style="width:200px;height:200px">
+			<img class="img-circle" src="resources/img/img8.jpg" style="width:200px;height:200px">
 			  <figcaption>Hats</figcaption>
 		  </figure>
 		  </button>

@@ -41,20 +41,6 @@ public class UserController {
 		
 	}
 	
-	@RequestMapping(value= "/remove/{userId}")
-	public String removePerson(@PathVariable("userId") int userId)
-	{
-		userDAO.removeUser(userId);
-		return "redirect:/";
-	}
-	
-	@RequestMapping(value= "/edit/{userId}")
-	public String editPerson(@PathVariable("userId") int userId, Model model)
-	{
-		model.addAttribute("person", userDAO.getUserById(userId));
-        model.addAttribute("listPersons", userDAO.listUsers());
-        return "";
-	}
 
 	@RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
     public String accessDeniedPage(Model model) {

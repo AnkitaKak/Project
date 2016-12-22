@@ -18,10 +18,13 @@
 <!--<c:url value="ProductDetails/{productId}"></c:url>-->
 
 <div class="row" ng-app="productApp" ng-controller="prodController" style="padding-top:200px; padding-left:700px;">
+    <div class="section">
+       {{prodDetails.image}}
+    </div>  
       <table class="table" style="border-color:white;">
         <tr>
-          <td colspan="2">Product Id:</td>
-          <td colspan="2">{{prodDetails.productId}}</td>
+          <td colspan="2">Product Name:</td>
+          <td colspan="2">{{prodDetails.productName}}</td>
         </tr>  
         <tr>
           <td colspan="2">Brand:</td>

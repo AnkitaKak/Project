@@ -10,6 +10,7 @@
     <param-value>/WEB-INF/spring-dispatcher-servlet.xml
           /WEB-INF/hibernate-config.xml
           /WEB-INF/Security-Config.xml
+          /WEB-INF/webflow-config.xml
     </param-value> 
   </context-param>
  
