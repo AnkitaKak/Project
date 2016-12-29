@@ -44,4 +44,9 @@ public class ProductDAOImpl implements ProductDAO {
 		Product product=(Product)sessionFactory.getCurrentSession().createQuery("from Product where productId="+productId).getSingleResult();
 		sessionFactory.getCurrentSession().delete(product);
 	}
+
+	public List<Product> getProductsByCategory(String category) {
+		List<Product> products=sessionFactory.getCurrentSession().createQuery("from Product where category='"+category+"'").getResultList();
+		return products;
+	}
 }

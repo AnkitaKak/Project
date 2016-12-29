@@ -1,7 +1,7 @@
 <%@ page isELIgnored="false" %>
 <%@ include file="template/Header.jsp" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+    
 <script>
      var prod=${productData};
      angular.module("prodApp", [])
@@ -20,9 +20,7 @@
 
 <div class="section" style="padding-top: 100px" ng-app="prodApp">
   
-  <b>
-  <p style="padding-left:50px;">Products in Store</p>
-  </b>
+  <!-- <b><p style="padding-left:50px;">Products in Store</p></b> -->
   <br>
   <div class="row">
     <div class="col-sm-1">

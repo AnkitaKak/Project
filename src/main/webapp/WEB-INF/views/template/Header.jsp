@@ -92,7 +92,18 @@
         </form>
         <ul class="nav navbar-nav nav-default">
           <li><a class="active" href="home"><span class="glyphicon glyphicon-home"></span>  Home</a></li>
-          <li><a href="Product">Products</a></li>
+          <li class="dropdown">
+            <a class="dropbtn" data-toggle="dropdown" href="Product">Products
+              <span class="caret"></span>
+		    </a>
+            <div class="dropdown-content">
+              <a href="<c:url value='/Product/Jewellery' />">Jewellery</a>
+			  <a href="<c:url value='/Product/Handbags' />">Handbags & Purses</a>
+			  <a href="<c:url value='/Product/Hair' />">Hair Accessories</a>
+			  <a href="<c:url value='/Product/Bracelets' />">Bracelets & Rings</a>
+			  <a href="<c:url value='/Product/Hats' />">Hats</a>
+		    </div> 
+          </li>
           <li><a href="#">About Us</a></li> 
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">Offers</a></li>	  

@@ -42,11 +42,12 @@
     </div>	
     <br> 
   <div class="row">
-    <div class="col-md-6"><br><b><u><p><font color="#191970">Accessories Maniac </b></u></font>
+    <div class="col-md-6"><br><b><u><p style="padding-left: 20px;"><font color="#191970">Accessories Maniac </b></u></font>
 	<br><font color="#008080"> It is a platform for everyone who's completely into latest fashion and the one's who love to have it all. 
 	<br> Check out all our latest collections and stay tuned for more offers coming soon!!! </font>
 	<br><br>
-	<font color="#DAA520">To read more About Us-->><a href="About.html">Click Here..!!!</font></a></p>
+	<font color="#DAA520">To read more About Us-->><a href="home">Click Here..!!!</font></a>
+	</p>
 	</div>	  
     <div class="col-md-6"> 
 	  <div class="embed-responsive embed-responsive-16by9">
@@ -59,7 +60,7 @@
   <div class="container">
     <table class="table"> 
 	  <tr> 
-	    <td><a href="Product"><div class="col-md-3">
+	    <td><a href="<c:url value='/Product/Handbags' />"><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>
 		    <img class="img-circle" src="resources/img/img5.jpg" style="width:200px;height:200px">
@@ -67,7 +68,7 @@
 		  </figure>
 		  </button>
 		</div></a></td>  
-		<td><a href="Product"><div class="col-md-3">
+		<td><a href=""<c:url value='/Product/Jewellery' />""><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>
 		    <img class="img-circle" src="resources/img/img6.png" style="width:200px;height:200px">
@@ -75,7 +76,7 @@
 		  </figure>
 		  </button>
 		</div></a></td>
-		<td><a href="Product"><div class="col-md-3">
+		<td><a href="<c:url value='/Product/Hair' />"><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>  
 			<img class="img-circle" src="resources/img/img7.jpg" style="width:200px;height:200px">
@@ -83,7 +84,7 @@
 		  </figure>
 		  </button>
 		</div></a></td>
-		<td><a href="Product"><div class="col-md-3">
+		<td><a href="<c:url value='/Product/Hats' />"><div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>		  
 			<img class="img-circle" src="resources/img/img8.jpg" style="width:200px;height:200px">

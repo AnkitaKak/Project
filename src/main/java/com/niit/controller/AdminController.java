@@ -31,7 +31,7 @@ public class AdminController {
 	ProductDAO productDAO;
 	UserDAO userDAO;
 	
-	@RequestMapping(value = "/admin", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin")
     public String adminPage(Model model) {
         return "admin";
     }

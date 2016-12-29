@@ -8,8 +8,8 @@
     <http auto-config="true" >
         <intercept-url pattern="/" access="permitAll" />
         <intercept-url pattern="/home" access="permitAll" />
-        <intercept-url pattern="/admin**" access="hasRole('ADMIN')" />
-        <form-login  login-page="/Login" username-parameter="uname" password-parameter="pwd" authentication-failure-url="/Access_Denied" />
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+        <form-login  login-page="/Login" default-target-url="/" username-parameter="uname" password-parameter="pwd" authentication-failure-url="/Access_Denied" />
         <logout logout-success-url="/Login" />
         <csrf disabled="true"></csrf>
     </http>

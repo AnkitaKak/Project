@@ -57,14 +57,14 @@ public class HomeController {
 		return model;
 	}
 	
-	@RequestMapping(value= "/Product")
+	/*@RequestMapping(value= "/Product")
 	public ModelAndView productsPage() {
 		List<Product> products=productDAO.getAllProducts();
 		String json=new Gson().toJson(products);
 		ModelAndView model=new ModelAndView("Product");
 		model.addObject("productData", json);
 		return model;
-	}
+	}*/
 	
 	@RequestMapping(value= "/ProductDetails/{productId}")
 	public ModelAndView detailsPage(@PathVariable("productId") int productId) {
@@ -72,6 +72,15 @@ public class HomeController {
 		String json=new Gson().toJson(product);
 		ModelAndView model=new ModelAndView("ProductDetails");
 		model.addObject("productDetails", json);
+		return model;
+	}
+	
+	@RequestMapping(value= "/Product/{category}")
+	public ModelAndView productsPage(@PathVariable("category") String category) {
+		List<Product> product=productDAO.getProductsByCategory(category);
+		String json=new Gson().toJson(product);
+		ModelAndView model=new ModelAndView("Product");
+		model.addObject("productData", json);
 		return model;
 	}
  
