@@ -20,18 +20,18 @@
   
   <br><br><br><br><br><br><br><br>
  
-   <form:form action="Login" method="POST">
+   <form class="form-horizontal" method="POST" action="<c:url value='/Login' />" >
     
      <br /><br />
 	 <div class="form-group">
-	   <label for="uname" class="col-md-4 control-label">Username:</label>
+	   <label class="col-md-4 control-label">Username:</label>
 	   <div class="col-md-6">
 	     <input type="text" class="form-control" id="uname" name="uname" path="uname">
 	   </div>
 	 </div>
 	 <br />
 	 <div class="form-group">
-       <label for="pwd" class="col-md-4 control-label">Password:</label>
+       <label class="col-md-4 control-label">Password:</label>
 	   <div class="col-md-6">
          <input type="password" class="form-control" id="pwd" name="pwd" path="pwd">
 	   </div>
@@ -39,15 +39,12 @@
      
      <br />
      <br />	
-     <div class="row">
-       <button type="submit" class="btn btn-info btn-lg" value="Login">Login
-         <!--<c:if test="${user.uname}=='admin' && ${user.pwd}=='admin'" > 
-           <a href="<c:url value='/admin' />"></a>
-         </c:if> -->
+     <div class="col-sm-offset-2 col-sm-10">
+       <button type="submit" class="btn btn-info btn-lg">Login
        </button>
      </div>
      
-    </form:form>
+    </form>
   <br><br> 
   <p>
     <font color="#191970"> Not a Registered User??? </font>

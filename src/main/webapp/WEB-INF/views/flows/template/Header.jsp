@@ -99,7 +99,7 @@
         </ul>
 	    <ul class="nav navbar-nav navbar-right">
           <li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-          <li><a href="Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          <li><a href="<c:url value='/Login' />"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
       </div>
    </div>	

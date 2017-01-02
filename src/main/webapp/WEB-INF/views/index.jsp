@@ -60,7 +60,8 @@
   <div class="container">
     <table class="table"> 
 	  <tr> 
-	    <td><a href="<c:url value='/Product/Handbags' />"><div class="col-md-3">
+	    <td><a href="<c:url value='/Product/Handbags' />">
+	    <div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>
 		    <img class="img-circle" src="resources/img/img5.jpg" style="width:200px;height:200px">
@@ -68,7 +69,8 @@
 		  </figure>
 		  </button>
 		</div></a></td>  
-		<td><a href=""<c:url value='/Product/Jewellery' />""><div class="col-md-3">
+		<td><a href="<c:url value='/Product/Jewellery' />">
+		<div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>
 		    <img class="img-circle" src="resources/img/img6.png" style="width:200px;height:200px">
@@ -76,7 +78,8 @@
 		  </figure>
 		  </button>
 		</div></a></td>
-		<td><a href="<c:url value='/Product/Hair' />"><div class="col-md-3">
+		<td><a href="<c:url value='/Product/Hair' />">
+		<div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>  
 			<img class="img-circle" src="resources/img/img7.jpg" style="width:200px;height:200px">
@@ -84,7 +87,8 @@
 		  </figure>
 		  </button>
 		</div></a></td>
-		<td><a href="<c:url value='/Product/Hats' />"><div class="col-md-3">
+		<td><a href="<c:url value='/Product/Hats' />">
+		<div class="col-md-3">
 		  <button class="btn btn-default">
 		  <figure>		  
 			<img class="img-circle" src="resources/img/img8.jpg" style="width:200px;height:200px">

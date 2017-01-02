@@ -19,7 +19,7 @@
   
   <div class="container central">
  
-  <c:url var="addAction" value="/insertUser"> </c:url>
+  <c:url var="addAction" value="/user/register"> </c:url>
   
   <h2><font color="#708090"> Create an Account </font></h2>
  
@@ -33,7 +33,7 @@
         <tr>
           <td><form:label path="name">Enter Name: </form:label></td>
           <td><form:input class="form-control col-xs-6" type="text" id="name" path="name" name="name"></form:input></td>
-          <td><form:errors path="name" style="color:red;" /></td>
+          <td><form:errors path="name" cssClass="error" /></td>
         </tr>
         <tr> 
          <td></td>
@@ -41,7 +41,7 @@
         <tr>
 	      <td><form:label path="uname">Enter Username: </form:label></td>
 	      <td><form:input type="text" class="form-control col-xs-6" path="uname" id="uname" name="uname"/>
-	      <td><form:errors path="uname" style="color:red;" /></td>  
+	      <td><form:errors path="uname" cssClass="error" /></td>  
 	    </tr>
 	    <tr>
 	      <td></td>
@@ -49,7 +49,7 @@
 	    <tr>
 	      <td><form:label path="email">Enter Email:</form:label></td>
 	      <td><form:input type="email" class="form-control col-xs-6" id="email" path="email" name="email" />
-	      <td><form:errors path="email" style="color:red;" /></td>
+	      <td><form:errors path="email" cssClass="error" /></td>
 	    </tr>
 	    <tr>
 	      <td></td>
@@ -57,7 +57,7 @@
 	    <tr>
 	      <td><form:label path="pwd">Enter Password:</form:label></td>
 	      <td><form:input type="password" class="form-control col-xs-6" id="pwd" path="pwd" name="pwd" />
-	      <td><form:errors path="pwd" style="color:red;" /></td>
+	      <td><form:errors path="pwd" cssClass="error" /></td>
 	    </tr>
 	    <tr>
 	      <td></td>
@@ -65,7 +65,7 @@
 	    <tr>
 	      <td><form:label path="dob">Enter Date of Birth:</form:label></td>
 	      <td><form:input type="date" class="form-control col-xs-6" id="dob" path="dob" name="dob" />
-	      <td><form:errors path="dob" style="color:red;" /></td>
+	      <td><form:errors path="dob" cssClass="error" /></td>
 	    </tr> 
       </table>
     </div>

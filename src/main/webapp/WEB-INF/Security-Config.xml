@@ -7,22 +7,14 @@
       
     <http auto-config="true" >
         <intercept-url pattern="/" access="permitAll" />
-        <intercept-url pattern="/home" access="permitAll" />
-        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
-        <form-login  login-page="/Login" default-target-url="/" username-parameter="uname" password-parameter="pwd" authentication-failure-url="/Access_Denied" />
+        <intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
+        <intercept-url pattern="/ShowCart/**" access="hasAnyRole('ADMIN' , 'USER')" />
+        <intercept-url pattern="/AddToCart/**" access="hasAnyRole('ADMIN' , 'USER')" />
+        <intercept-url pattern="/ProductAdmin/**" access="hasRole('ADMIN')" />
+        <form-login  login-page="/Login" default-target-url="/" username-parameter="uname" password-parameter="pwd" />
         <logout logout-success-url="/Login" />
         <csrf disabled="true"></csrf>
     </http>
-  
-    <!-- <authentication-manager >
-        <authentication-provider>
-            <user-service>
-                <user name="ankita"  password="12345"  authorities="ROLE_USER" />
-                <user name="admin" password="admin" authorities="ROLE_ADMIN" />
-                
-            </user-service>
-        </authentication-provider>
-    </authentication-manager> -->
     
     <authentication-manager>  
       <authentication-provider>  
@@ -34,5 +26,14 @@
       </authentication-provider>  
     </authentication-manager>
       
-     
+      <!-- <authentication-manager >
+        <authentication-provider>
+            <user-service>
+                <user name="ankita"  password="12345"  authorities="ROLE_USER" />
+                <user name="admin" password="admin" authorities="ROLE_ADMIN" />
+                
+            </user-service>
+        </authentication-provider>
+    </authentication-manager> -->
+    
 </beans:beans>

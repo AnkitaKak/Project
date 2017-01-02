@@ -21,44 +21,21 @@ public class UserController {
 	@Autowired
 	UserDAO userDAO;
 
-	@RequestMapping(value= "/insertUser", method = RequestMethod.POST)
-	public String registerUser(@Valid @ModelAttribute("user") Users user, Model model, BindingResult result) {
+	@RequestMapping(value= "/user/register", method = RequestMethod.POST)
+	public String registerUser(@Valid @ModelAttribute("user") Users user, BindingResult result) {
 		
 		if(result.hasErrors())
 		{
 			return "Register";
 		}
 		
-		if(user.getUserId()==0)
-		{
-			userDAO.addUser(user);
-			return "Login";
-		}
 		else {
-			return "Register";
+			userDAO.addUser(user);
+			return "redirect:/";
 		}
 		
 		
 	}
 	
-
-	@RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
-    public String accessDeniedPage(Model model) {
-        model.addAttribute("user", getPrincipal());
-        return "accessDenied";
-    }
-    
-    private String getPrincipal(){
-        String userName = null;
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
- 
-        if (principal instanceof Users) {
-            userName = ((Users)principal).getUname();
-        } 
-        else {
-            userName = principal.toString();
-        }
-        return userName;
-    }
 
 }

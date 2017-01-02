@@ -1,9 +1,12 @@
 package com.niit.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import javax.validation.constraints.Size;
@@ -30,6 +33,14 @@ public class Users {
 	private String dob;
 	private String role;
 	private boolean enabled;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="cartId")
+	private Cart cart;
+	
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="shippingAddressId")
+	private ShippingAddress shippingAddress;
 	
 
 	public Users(){
@@ -101,6 +112,20 @@ public class Users {
 		this.enabled = enabled;
 	}
 	
-    
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
+	}
+
+	public ShippingAddress getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(ShippingAddress shippingAddress) {
+		this.shippingAddress = shippingAddress;
+	}
 	
 }

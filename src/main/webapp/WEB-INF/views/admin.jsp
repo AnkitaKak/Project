@@ -5,15 +5,10 @@
 
 <div class="container">
   
-  <p> Welcome Admin!!! </p>  
-  <a href="<c:url value="/logout" />" style="align:right;">Logout</a> 
   
   <br /><br />
   
-  <p>Select one: </p>
-   
-  <a href="/viewProduct">View All Products </a> 
-  <a href="/viewUser">View All Users </a>
+ 
 
 </div>
 

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,14 +30,37 @@ public class AdminController {
 
 	@Autowired
 	ProductDAO productDAO;
+	@Autowired
 	UserDAO userDAO;
 	
 	@RequestMapping(value = "/admin")
     public String adminPage(Model model) {
-        return "admin";
+        model.addAttribute("user", getPrincipal());
+		//ModelAndView model=new ModelAndView("admin");
+		return "admin";
     }
 	
-	@RequestMapping(value= "/viewProduct", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "/Access_Denied", method = RequestMethod.GET)
+    public String accessDeniedPage(Model model) {
+        model.addAttribute("user", getPrincipal());
+        return "accessDenied";
+    }
+    
+    private String getPrincipal(){
+        String uname = null;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+ 
+        if (principal instanceof Users) {
+            uname = ((Users)principal).getUname();
+        } 
+        else {
+            uname = principal.toString();
+        }
+        return uname;
+    }
+	
+	@RequestMapping(value= "/ProductAdmin", method = RequestMethod.GET)
 	public String viewProductDetails(@Valid @ModelAttribute("product") Product product, Model model) {
 		/*List<Product> products=productDAO.getAllProducts();
 		String json=new Gson().toJson(products);

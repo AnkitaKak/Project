@@ -28,7 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+
 
 @Controller
 public class HomeController {
@@ -52,8 +52,17 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value= "/Login")
-	public ModelAndView LoginPage() {
+	public ModelAndView loginPage() {
 		ModelAndView model=new ModelAndView("Login");
+		return model;
+	}
+	
+
+    @RequestMapping(value= "/ProductDetails/{productId}")
+	public ModelAndView detailsPage(@PathVariable("productId") int productId) {
+		Product product=productDAO.getProduct(productId);
+		ModelAndView model=new ModelAndView("ProductDetails");
+		model.addObject("product", product);
 		return model;
 	}
 	
@@ -64,7 +73,7 @@ public class HomeController {
 		ModelAndView model=new ModelAndView("Product");
 		model.addObject("productData", json);
 		return model;
-	}*/
+	}
 	
 	@RequestMapping(value= "/ProductDetails/{productId}")
 	public ModelAndView detailsPage(@PathVariable("productId") int productId) {
@@ -73,7 +82,7 @@ public class HomeController {
 		ModelAndView model=new ModelAndView("ProductDetails");
 		model.addObject("productDetails", json);
 		return model;
-	}
+	}*/
 	
 	@RequestMapping(value= "/Product/{category}")
 	public ModelAndView productsPage(@PathVariable("category") String category) {
@@ -85,14 +94,16 @@ public class HomeController {
 	}
  
  
-    @RequestMapping(value="/logout", method = RequestMethod.GET)
-       public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
-          Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-          if (auth != null){    
-             new SecurityContextLogoutHandler().logout(request, response, auth);
-          }
-          return "index";
-       }
+    @RequestMapping(value="/logout")
+    public ModelAndView logoutPage() {
+		ModelAndView model=new ModelAndView("index");
+		return model;
+	}  
  
+    @RequestMapping(value= "/ShowCart")
+	public ModelAndView cartPage() {
+		ModelAndView model=new ModelAndView("Cart");
+		return model;
+	}
     
 }
