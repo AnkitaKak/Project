@@ -41,7 +41,7 @@ public class CartController {
 		model.addObject("user", user);
 		Cart cart=user.getCart();
 		Product product=productDAO.getProduct(productId);
-		List<Item> items=cart.getItems();
+		/*List<Item> items=cart.getItems();
 		
 		for(int i=0; i<items.size(); i++){
 			if(product.getProductId()==items.get(i).getProduct().getProductId()){
@@ -52,7 +52,7 @@ public class CartController {
 				
 				return model;
 			}
-		}
+		}*/
 		
 		Item item=new Item();
 		item.setProduct(product);

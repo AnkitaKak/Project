@@ -31,7 +31,7 @@ public class UserController {
 		
 		else {
 			userDAO.addUser(user);
-			return "redirect:/";
+			return "Login";
 		}
 		
 		
