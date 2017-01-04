@@ -54,6 +54,7 @@ public class HomeController {
 	@RequestMapping(value= "/Login")
 	public ModelAndView loginPage() {
 		ModelAndView model=new ModelAndView("Login");
+		System.out.print("LOGIN PAGE");
 		return model;
 	}
 	
@@ -103,6 +104,7 @@ public class HomeController {
     @RequestMapping(value= "/ShowCart")
 	public ModelAndView cartPage() {
 		ModelAndView model=new ModelAndView("Cart");
+		System.out.print("CART");
 		return model;
 	}
     

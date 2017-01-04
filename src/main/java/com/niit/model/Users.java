@@ -24,11 +24,13 @@ public class Users {
 	@NotEmpty(message="Name Can't be empty")
 	private String name;
 	@NotEmpty(message="Username Can't be empty")
-	private String uname;
+	private String username;
+	//private String uname;
 	@NotEmpty(message="Email Can't be empty")
 	private String email;
 	@NotEmpty(message="Password Can't be empty")
-	private String pwd;
+	private String password;
+	//private String pwd;
 	@NotEmpty(message="Date of Birth Can't be empty")
 	private String dob;
 	private String role;
@@ -64,28 +66,12 @@ public class Users {
 		this.name = name;
 	}
 
-	public String getUname() {
-		return uname;
-	}
-
-	public void setUname(String uname) {
-		this.uname = uname;
-	}
-
 	public String getEmail() {
 		return email;
 	}
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getPwd() {
-		return pwd;
-	}
-
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
 	}
 
 	public String getDob() {
@@ -127,5 +113,39 @@ public class Users {
 	public void setShippingAddress(ShippingAddress shippingAddress) {
 		this.shippingAddress = shippingAddress;
 	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	
+	/*public String getUname() {
+		return uname;
+    }
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+
+	public String getPwd() {
+		return pwd;
+	}
+
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
+	}*/
+
 	
 }

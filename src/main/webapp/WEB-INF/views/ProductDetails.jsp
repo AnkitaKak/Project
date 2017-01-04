@@ -61,7 +61,7 @@
     </div>
     
   
-    <a href="<c:url value='/AddToCart/${prodDetails.productId}' />" >
+    <a href="<c:url value='/AddToCart/${product.productId}' />" >
         <button class="btn btn-warning btn-lg">ADD TO CART</button>
     </a>
   

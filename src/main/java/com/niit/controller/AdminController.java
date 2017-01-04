@@ -48,16 +48,16 @@ public class AdminController {
     }
     
     private String getPrincipal(){
-        String uname = null;
+        String username = null;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
  
         if (principal instanceof Users) {
-            uname = ((Users)principal).getUname();
+            username = ((Users)principal).getUsername();
         } 
         else {
-            uname = principal.toString();
+            username = principal.toString();
         }
-        return uname;
+        return username;
     }
 	
 	@RequestMapping(value= "/ProductAdmin", method = RequestMethod.GET)

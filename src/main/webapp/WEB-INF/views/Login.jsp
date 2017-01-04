@@ -26,14 +26,14 @@
 	 <div class="form-group">
 	   <label class="col-md-4 control-label">Username:</label>
 	   <div class="col-md-6">
-	     <input type="text" class="form-control" id="uname" name="uname" path="uname">
+	     <input type="text" class="form-control" id="username" name="username" path="username">
 	   </div>
 	 </div>
 	 <br />
 	 <div class="form-group">
        <label class="col-md-4 control-label">Password:</label>
 	   <div class="col-md-6">
-         <input type="password" class="form-control" id="pwd" name="pwd" path="pwd">
+         <input type="password" class="form-control" id="password" name="password" path="password">
 	   </div>
 	 </div>  
      
@@ -48,7 +48,7 @@
   <br><br> 
   <p>
     <font color="#191970"> Not a Registered User??? </font>
-    <a href="#"><font color="#DAA520"> Click here to Sign Up </font></a>
+    <a href="<c:url value='/Register' />"><font color="#DAA520"> Click here to Sign Up </font></a>
   </p>
   
   </div> 

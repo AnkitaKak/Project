@@ -39,9 +39,9 @@
          <td></td>
         </tr>
         <tr>
-	      <td><form:label path="uname">Enter Username: </form:label></td>
-	      <td><form:input type="text" class="form-control col-xs-6" path="uname" id="uname" name="uname"/>
-	      <td><form:errors path="uname" cssClass="error" /></td>  
+	      <td><form:label path="username">Enter Username: </form:label></td>
+	      <td><form:input type="text" class="form-control col-xs-6" path="username" id="username" name="username"/>
+	      <td><form:errors path="username" cssClass="error" /></td>  
 	    </tr>
 	    <tr>
 	      <td></td>
@@ -55,9 +55,9 @@
 	      <td></td>
 	    </tr>
 	    <tr>
-	      <td><form:label path="pwd">Enter Password:</form:label></td>
-	      <td><form:input type="password" class="form-control col-xs-6" id="pwd" path="pwd" name="pwd" />
-	      <td><form:errors path="pwd" cssClass="error" /></td>
+	      <td><form:label path="password">Enter Password:</form:label></td>
+	      <td><form:input type="password" class="form-control col-xs-6" id="password" path="password" name="password" />
+	      <td><form:errors path="password" cssClass="error" /></td>
 	    </tr>
 	    <tr>
 	      <td></td>

@@ -76,9 +76,9 @@ public class UserDAOImpl implements UserDAO {
 		sessionFactory.getCurrentSession().delete(user);
 	}
 	
-	public Users getUserByUsername(String uname) {
+	public Users getUserByUsername(String username) {
 		Session session=sessionFactory.getCurrentSession();
-		Users user=(Users)session.createQuery("from Users where username='"+uname+"'").getSingleResult();
+		Users user=(Users)session.createQuery("from Users where username='"+username+"'").getSingleResult();
 		return user;
 		
 	}

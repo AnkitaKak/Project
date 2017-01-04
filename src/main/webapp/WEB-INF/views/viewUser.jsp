@@ -55,10 +55,10 @@
     
      <tr>
         <td>
-           <form:label path="uname">Username: </form:label>
+           <form:label path="username">Username: </form:label>
         </td>
         <td>
-           <form:input path="uname" type="text" id="uname" name="uname" class="form-control col-xs-6"></form:input>
+           <form:input path="username" type="text" id="username" name="username" class="form-control col-xs-6"></form:input>
         </td>
      </tr>
      
@@ -73,10 +73,10 @@
      
      <tr>
         <td>
-           <form:label path="pwd">Password: </form:label>
+           <form:label path="password">Password: </form:label>
         </td>
         <td>
-           <form:input path="pwd" type="password" id="pwd" name="pwd" class="form-control col-xs-6"></form:input>
+           <form:input path="password" type="password" id="password" name="password" class="form-control col-xs-6"></form:input>
         </td>
      </tr>          
     
@@ -144,9 +144,9 @@
        <tr>
           <td>${user.userId}</td>
           <td>${user.name}</td>
-          <td>${user.uname}</td>
+          <td>${user.username}</td>
           <td>${user.email}</td>
-          <td>${user.pwd}</td>
+          <td>${user.password}</td>
           <td>${user.dob}</td>
           <td><a href="<c:url value='/editUser/${user.userId}' />">Edit</a></td>
           <td><a href="<c:url value='/removeUser/${user.userId}' />">Delete</a></td>

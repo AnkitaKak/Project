@@ -115,7 +115,7 @@
         <sec:authorize access="hasRole('ADMIN')">
            <ul class="nav navbar-nav navbar-right">
               <li>
-                 <a href="">Welcome <b><sec:authentication property="principal.uname" /></b></a>
+                 <a href="">Welcome <b><sec:authentication property="principal.username" /></b></a>
               </li>
               <li>
                  <a href="<c:url value='/ProductAdmin' />">Product Admin</a>
@@ -129,7 +129,7 @@
         <sec:authorize access="hasRole('USER')">
            <ul class="nav navbar-nav navbar-right">
               <li>
-                 <a href="">Welcome <b><sec:authentication property="principal.uname" /></b></a>
+                 <a href="">Welcome <b><sec:authentication property="principal.username" /></b></a>
               </li>
               <li>
                  <a href="<c:url value='/ShowCart' />"><i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i></a>
