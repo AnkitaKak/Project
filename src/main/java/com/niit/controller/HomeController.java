@@ -18,6 +18,7 @@ import com.niit.dao.UserDAO;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.security.Principal;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -54,6 +55,7 @@ public class HomeController {
 	@RequestMapping(value= "/Login")
 	public ModelAndView loginPage() {
 		ModelAndView model=new ModelAndView("Login");
+		
 		System.out.print("LOGIN PAGE");
 		return model;
 	}
@@ -100,12 +102,5 @@ public class HomeController {
 		ModelAndView model=new ModelAndView("index");
 		return model;
 	}  
- 
-    @RequestMapping(value= "/ShowCart")
-	public ModelAndView cartPage() {
-		ModelAndView model=new ModelAndView("Cart");
-		System.out.print("CART");
-		return model;
-	}
     
 }

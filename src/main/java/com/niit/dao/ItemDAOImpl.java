@@ -8,9 +8,10 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.niit.model.Cart;
 import com.niit.model.Item;
 
-@Repository
+@Repository("itemDAO")
 @EnableTransactionManagement
 @Transactional
 public class ItemDAOImpl implements ItemDAO{
@@ -38,6 +39,13 @@ public class ItemDAOImpl implements ItemDAO{
 	public void removeItem(Item itemId) {
 		Session session=sessionFactory.getCurrentSession();
 		Item item=(Item)session.createQuery("from Item where itemId="+itemId).getSingleResult();
+		session.delete(item);
+		
+	}
+	
+	public void removeAllItems(Cart cart) {
+		Session session=sessionFactory.getCurrentSession();
+		List<Item> item=cart.getItems();
 		session.delete(item);
 		
 	}

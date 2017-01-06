@@ -37,6 +37,8 @@
         </tr>
         <tr> 
          <td></td>
+         <td></td>
+         <td></td>
         </tr>
         <tr>
 	      <td><form:label path="username">Enter Username: </form:label></td>
@@ -44,6 +46,8 @@
 	      <td><form:errors path="username" cssClass="error" /></td>  
 	    </tr>
 	    <tr>
+	      <td></td>
+	      <td></td>
 	      <td></td>
 	    </tr>
 	    <tr>
@@ -53,6 +57,8 @@
 	    </tr>
 	    <tr>
 	      <td></td>
+	      <td></td>
+	      <td></td>
 	    </tr>
 	    <tr>
 	      <td><form:label path="password">Enter Password:</form:label></td>
@@ -60,6 +66,8 @@
 	      <td><form:errors path="password" cssClass="error" /></td>
 	    </tr>
 	    <tr>
+	      <td></td>
+	      <td></td>
 	      <td></td>
 	    </tr>
 	    <tr>

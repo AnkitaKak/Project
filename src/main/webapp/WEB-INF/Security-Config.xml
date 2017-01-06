@@ -12,7 +12,7 @@
         <intercept-url pattern="/AddToCart/**" access="hasAnyRole('ADMIN' , 'USER')" />
         <intercept-url pattern="/ProductAdmin/**" access="hasRole('ADMIN')" />
         <form-login login-page="/Login" default-target-url="/ShowCart" username-parameter="username" password-parameter="password" authentication-failure-url="/Access_Denied"/>
-        <logout logout-success-url="/Login" />
+        <logout logout-success-url="/home" />
         <csrf disabled="true"></csrf>
     </http>
     

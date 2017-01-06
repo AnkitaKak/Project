@@ -8,7 +8,7 @@
 <div class="section" style="padding-top:100px; padding-bottom:300px;">
      <div class="container" ng-app="addToCartApp">
 
-        <div class="bs-component" ng-controller="addToCartctrl" ng-init="retrieveCart($(user.cart.cartId))"> 
+        <div class="bs-component" ng-controller="addToCartctrl" ng-init="retrieveCart(${user.cart.cartId})"> 
 
 
            <table class="table table-striped table-hover">
@@ -40,7 +40,7 @@
                      <td></td>
                      <td></td>
                      <td>Grand Total:</td>
-                     <td>{{grandTotalOfItems()}}</td>
+                     <td>{{GrandTotalOfItems()}}</td>
                      <td><a href="<c:url value='/order/${user.cart.cartId}' />" class="btn btn-success">Proceed to Payment</a></td> 
                   </tr>
 

@@ -19,8 +19,8 @@
     </flow:flow-executor>
          
     <flow:flow-registry id="flowRegistry">
-           <flow:flow-location id="projectFlow"
-               path="/WEB-INF/views/flows/project-flow.xml"> 
+           <flow:flow-location id="checkout"
+               path="/WEB-INF/views/flows/checkout-flow.xml"> 
            </flow:flow-location>
     </flow:flow-registry>                 
     

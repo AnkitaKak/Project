@@ -2,6 +2,7 @@ package com.niit.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -20,14 +21,14 @@ public class Cart {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int cartId;
 	
-	/*@OneToMany(mappedBy="Cart",fetch=FetchType.EAGER)
-	private List<Item> items; */
+	@OneToMany(mappedBy="cart",fetch=FetchType.EAGER)
+	private List<Item> items; 
 	
 	@OneToOne
 	@JoinColumn(name="userId")
 	private Users user;
 	
-	@OneToOne
+	/*@OneToOne
 	@JoinColumn(name="itemId")
 	private Item item;
 	
@@ -37,7 +38,7 @@ public class Cart {
 
 	public void setItem(Item item) {
 		this.item = item;
-	}
+	}*/
 
 	public int getCartId() {
 		return cartId;
@@ -47,13 +48,13 @@ public class Cart {
 		this.cartId = cartId;
 	}
 	
-	/*public List<Item> getItems() {
+	public List<Item> getItems() {
 		return items;
 	}
 	
 	public void setItems(List<Item> items) {
 		this.items = items;
-	}*/
+	}
 	
 	public Users getUser() {
 		return user;

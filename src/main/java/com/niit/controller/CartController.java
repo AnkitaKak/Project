@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.niit.dao.CartDAO;
 import com.niit.dao.ItemDAO;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.UserDAO;
@@ -16,6 +17,7 @@ import com.niit.dao.UserOrderDAO;
 import com.niit.model.Cart;
 import com.niit.model.Item;
 import com.niit.model.Product;
+import com.niit.model.UserOrder;
 import com.niit.model.Users;
 
 @Controller
@@ -33,6 +35,9 @@ public class CartController {
 	@Autowired
 	ItemDAO itemDAO;
 	
+	@Autowired
+	CartDAO cartDAO;
+	
 	@RequestMapping(value="/AddToCart/{productId}")
 	public ModelAndView cart(@PathVariable("productId") int productId, Principal principal){
 		ModelAndView model=new ModelAndView("Cart");
@@ -41,7 +46,7 @@ public class CartController {
 		model.addObject("user", user);
 		Cart cart=user.getCart();
 		Product product=productDAO.getProduct(productId);
-		/*List<Item> items=cart.getItems();
+		List<Item> items=cart.getItems();
 		
 		for(int i=0; i<items.size(); i++){
 			if(product.getProductId()==items.get(i).getProduct().getProductId()){
@@ -52,7 +57,7 @@ public class CartController {
 				
 				return model;
 			}
-		}*/
+		}
 		
 		Item item=new Item();
 		item.setProduct(product);
@@ -65,5 +70,28 @@ public class CartController {
 		return model;
 	}
 	
+	 @RequestMapping(value= "/ShowCart")
+		public ModelAndView cartPage(Principal principal) {
+			ModelAndView model=new ModelAndView("Cart");
+			Users user=userDAO.getUserByUsername(principal.getName());
+			model.addObject("user", user);
+			System.out.print("CART");
+			return model;
+		}
+	
+	 @RequestMapping("/order/{cartId}")
+	 public String placeOrder(@PathVariable("cartId") int cartId) {
+		 UserOrder userOrder = new UserOrder();
+		 Cart cart=cartDAO.getCartById(cartId);
+		 userOrder.setCart(cart);
+		 
+		 Users user=cart.getUser();
+		 userOrder.setUser(user);
+		 
+		 userOrderDAO.addOrder(userOrder);
+		 
+		 return "redirect:/checkout?userOrderId="+userOrder.getUserOrderId();
+		 
+	 }
 
 }

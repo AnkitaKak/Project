@@ -13,7 +13,7 @@ import com.niit.model.Cart;
 import com.niit.model.ShippingAddress;
 import com.niit.model.Users;
 
-@Repository
+@Repository("userDAO")
 @Transactional
 @EnableTransactionManagement
 public class UserDAOImpl implements UserDAO {

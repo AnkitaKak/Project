@@ -14,7 +14,7 @@ cartApp.controller("addToCartCtrl", function ($scope, $http) {
   
     $scope.removeItemFromCart = function(itemId) {
          alert('product removed')
-         $http.put('localhost:8080/Project/removeItem/'+itemId).success(function (data) {
+         $http.put('http://localhost:8080/Project/removeItem/'+itemId).success(function (data) {
               $scope.refreshCartItems();
          });
     };
@@ -22,7 +22,7 @@ cartApp.controller("addToCartCtrl", function ($scope, $http) {
     
     //Grand Total of Items method
    
-    $scope.grandTotalOfItems = function() {
+    $scope.GrandTotalOfItems = function() {
          var grandTotal=0;
          for(var i=0; i<$scope.cart.items.length; i++) {
                grandTotal+=$scope.cart.items[i].itemTotal;
@@ -35,7 +35,7 @@ cartApp.controller("addToCartCtrl", function ($scope, $http) {
     //refresh cart items method
  
     $scope.refreshCartItems = function() {
-         $http.get('localhost:8080/Project/refreshCart/'+$scope.cartId).success(function (data) {
+         $http.get('http://localhost:8080/Project/refreshCart/'+$scope.cartId).success(function (data) {
                $scope.cart=data;
          });
     };   
@@ -43,10 +43,10 @@ cartApp.controller("addToCartCtrl", function ($scope, $http) {
              
     //clear cart items method
          
-    //$scope.clearCartItems = function() {
-         
-   //      $scope.refreshCartItems();    
-    //}; 
+    $scope.clearCartItems = function() {
+         $http['delete']('http://localhost:8080/Project/clearCart'+$scope.cartId).success($scope.refreshCart());
+         $scope.refreshCartItems();    
+    }; 
  
 });
     
