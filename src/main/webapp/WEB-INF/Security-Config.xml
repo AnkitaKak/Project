@@ -11,7 +11,7 @@
         <intercept-url pattern="/ShowCart/**" access="hasAnyRole('ADMIN' , 'USER')" />
         <intercept-url pattern="/AddToCart/**" access="hasAnyRole('ADMIN' , 'USER')" />
         <intercept-url pattern="/ProductAdmin/**" access="hasRole('ADMIN')" />
-        <form-login login-page="/Login" default-target-url="/ShowCart" username-parameter="username" password-parameter="password" authentication-failure-url="/Access_Denied"/>
+        <form-login default-target-url="/ShowCart" username-parameter="username" password-parameter="password" authentication-failure-url="/Access_Denied"/>
         <logout logout-success-url="/home" />
         <csrf disabled="true"></csrf>
     </http>
@@ -20,8 +20,8 @@
       <authentication-provider>  
         
         <jdbc-user-service data-source-ref="dataSource"  
-            users-by-username-query="select username, password, enabled from users where username=?"  
-            authorities-by-username-query="select username, role from users where username=?" />  
+            users-by-username-query="SELECT username, password, enabled FROM users WHERE username=?"  
+            authorities-by-username-query="SELECT username, role FROM users WHERE username=?" />  
             
       </authentication-provider>  
     </authentication-manager>

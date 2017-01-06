@@ -18,9 +18,9 @@ public class ItemDAOImpl implements ItemDAO{
 
 	private SessionFactory sessionFactory;
 	
-	public void addItem(Item item) {
+	public void addItem(Item items) {
 		Session session=sessionFactory.getCurrentSession();
-		session.saveOrUpdate(item);
+		session.saveOrUpdate(items);
 		
 	}
 

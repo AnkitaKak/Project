@@ -52,13 +52,13 @@ public class HomeController {
 		return "Register";
 	}
 	
-	@RequestMapping(value= "/Login")
+	/*@RequestMapping(value= "/Login")
 	public ModelAndView loginPage() {
 		ModelAndView model=new ModelAndView("Login");
 		
 		System.out.print("LOGIN PAGE");
 		return model;
-	}
+	}*/
 	
 
     @RequestMapping(value= "/ProductDetails/{productId}")

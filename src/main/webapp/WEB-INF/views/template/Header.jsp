@@ -144,7 +144,7 @@
         <sec:authorize access="isAnonymous()">
 	      <ul class="nav navbar-nav navbar-right">
             <li><a href="Register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="<c:url value='/Login' />"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="<c:url value='/login' />"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
           </ul>
         </sec:authorize>
       </div>
