@@ -80,7 +80,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span> 
         </button>
-	  <a class="navbar-brand" href="<c:url value='/' />"><img src="<c:url value='resources/img/logo.jpg' />" width="180px" height=300% ></a>	
+	  <a class="navbar-brand" href="<c:url value='/' />"><img src="<c:url value='/resources/img/logo.jpg' />" width="180px" height=300% ></a>	
 	  </div>
 	  <div class="collapse navbar-collapse" id="myNavbar">
 	  <br>

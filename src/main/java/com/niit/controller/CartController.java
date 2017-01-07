@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.dao.CartDAO;
 import com.niit.dao.ItemDAO;
+import com.niit.dao.ItemDAOImpl;
 import com.niit.dao.ProductDAO;
 import com.niit.dao.UserDAO;
 import com.niit.dao.UserOrderDAO;
@@ -33,7 +34,7 @@ public class CartController {
 	UserOrderDAO userOrderDAO;
 	
 	@Autowired
-	ItemDAO itemDAO;
+	ItemDAO itemDAO = new ItemDAOImpl();
 	
 	@Autowired
 	CartDAO cartDAO;
@@ -64,7 +65,8 @@ public class CartController {
 		item.setQuantity(1);
 		item.setItemTotal(product.getPrice()*item.getQuantity());
 		item.setCart(cart);
-		
+		System.out.println(product.getProductName());
+		System.out.println(cart.getCartId());
 		itemDAO.addItem(item);
 		
 		return model;
